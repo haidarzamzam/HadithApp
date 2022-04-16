@@ -8,34 +8,41 @@ import androidx.recyclerview.widget.RecyclerView
 import com.haidev.hadithapp.data.model.HadithCollectionModel
 import com.haidev.hadithapp.databinding.ItemRowHadithCollectionBinding
 
-class ItemHadithCollectionAdapter :
+class ItemHadithCollectionAdapter(
+    private val listener: (HadithCollectionModel.Response.Data.Hadith) -> Unit
+) :
     ListAdapter<HadithCollectionModel.Response.Data.Hadith, ItemHadithCollectionAdapter.ViewHolder>(
         DiffCallback()
     ) {
 
     class ViewHolder private constructor(
-        private val binding: ItemRowHadithCollectionBinding
+        private val binding: ItemRowHadithCollectionBinding,
+        private val listener: (HadithCollectionModel.Response.Data.Hadith) -> Unit
     ) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: HadithCollectionModel.Response.Data.Hadith) {
             binding.item = item
+            binding.ivShare.setOnClickListener {
+                listener(item)
+            }
             binding.executePendingBindings()
         }
 
         companion object {
             fun from(
-                parent: ViewGroup
+                parent: ViewGroup,
+                listener: (HadithCollectionModel.Response.Data.Hadith) -> Unit
             ): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ItemRowHadithCollectionBinding.inflate(layoutInflater, parent, false)
-                return ViewHolder(binding)
+                return ViewHolder(binding, listener)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder.from(parent)
+        return ViewHolder.from(parent, listener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

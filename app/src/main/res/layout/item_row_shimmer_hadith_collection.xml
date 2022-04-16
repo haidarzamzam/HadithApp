@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        app:cardCornerRadius="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_normal">
+
+            <TextView
+                android:id="@+id/tv_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_point"
+                android:text="  "
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_share_24"
+                app:layout_constraintBottom_toBottomOf="@id/tv_point"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_point" />
+
+            <View
+                android:id="@+id/shimmer_arabic_1"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="@dimen/margin_big"
+                android:background="@drawable/bg_shimmer"
+                app:layout_constraintTop_toBottomOf="@id/tv_point" />
+
+            <View
+                android:id="@+id/shimmer_arabic_2"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/bg_shimmer"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_arabic_1" />
+
+            <View
+                android:id="@+id/shimmer_arabic_3"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginStart="@dimen/margin_very_big"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/bg_shimmer"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_arabic_2" />
+
+            <View
+                android:id="@+id/shimmer_id_1"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@drawable/bg_shimmer"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_arabic_3" />
+
+            <View
+                android:id="@+id/shimmer_id_2"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/bg_shimmer"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_id_1" />
+
+            <View
+                android:id="@+id/shimmer_id_3"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:background="@drawable/bg_shimmer"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_id_2" />
+
+            <View
+                android:id="@+id/shimmer_id_4"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:layout_marginEnd="@dimen/margin_very_big"
+                android:background="@drawable/bg_shimmer"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_id_3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.haidev.hadithapp.data.model.HadithCollectionModel.Response.Data.Hadith" />
+    </data>
+</layout>

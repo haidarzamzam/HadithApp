@@ -2,6 +2,7 @@ package com.haidev.hadithapp.ui.screen.hadithbooks
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.haidev.hadithapp.R
 import com.haidev.hadithapp.data.model.HadithBooksModel
@@ -63,7 +64,10 @@ class HadithBooksActivity : BaseActivity<ActivityHadithBooksBinding, HadithBooks
                 binding?.shimmerHadithBooks?.gone()
                 itemHadithBooksAdapter.submitList(it.data?.data?.toMutableList())
             }
-            Status.ERROR -> binding?.shimmerHadithBooks?.gone()
+            Status.ERROR -> {
+                Toast.makeText(this, it.throwable.toString(), Toast.LENGTH_SHORT).show()
+                binding?.shimmerHadithBooks?.gone()
+            }
             else -> binding?.shimmerHadithBooks?.gone()
         }
     }

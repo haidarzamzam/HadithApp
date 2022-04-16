@@ -1,31 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_normal"
-        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
         app:cardCornerRadius="@dimen/margin_small">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_normal">
+
+            <TextView
+                android:id="@+id/tv_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_point"
+                android:text="@{Integer.toString(item.number)}"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="300" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_share_24"
+                app:layout_constraintBottom_toBottomOf="@id/tv_point"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_point" />
 
             <TextView
                 android:id="@+id/tv_arabic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_big"
                 android:text="@{item.arab}"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/tv_point"
+                tools:text="وَهُوَ الْأَثَرُ الْمَشْهُورُعَنْ رَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ مَنْ حَدَّثَ عَنِّي بِحَدِيثٍ يُرَى أَنَّهُ كَذِبٌ فَهُوَ أَحَدُ الْكَاذِبِينَ حَدَّثَنَا أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ حَدَّثَنَا وَكِيعٌ عَنْ شُعْبَةَ عَنْ الْحَكَمِ عَنْ عَبْدِ الرَّحْمَنِ بْنِ أَبِي لَيْلَى عَنْ سَمُرَةَ بْنِ جُنْدَبٍ ح و حَدَّثَنَا أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ أَيْضًا حَدَّثَنَا وَكِيعٌ عَنْ شُعْبَةَ وَسُفْيَانَ عَنْ حَبِيبٍ عَنْ مَيْمُونِ بْنِ أَبِي شَبِيبٍ عَنْ الْمُغِيرَةِ بْنِ شُعْبَةَ قَالَا قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ذَلِكَ" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_normal"
+                android:textSize="12sp"
                 android:text="@{item.id}"
-                app:layout_constraintTop_toBottomOf="@id/tv_arabic" />
+                app:layout_constraintTop_toBottomOf="@id/tv_arabic"
+                tools:text="Dan ia merupakan atsar yang masyhur dari Rasulullah shallallahu 'alaihi wasallam, Barangsiapa menceritakan hadits dariku, yang mana riwayat itu diduga adalah kebohongan, maka dia (perawi) adalah salah satu dari para pembohong tersebut. Telah menceritakan kepada kami [Abu Bakar bin Abu Syaibah] telah menceritakan kepada kami [Waki'] dari [Syu'bah] dari [al Hakam] dari [Abdurrahman bin Abu Laila] dari [Samurah bin Jundab]. (dalam riwayat lain disebutkan) dan juga telah menceritakan kepada kami [Abu Bakar bin Abu Syaibah] telah menceritakan kepada kami [Waki'] dari [Syu'bah] dan [Sufyan] dari [Habib] dari [Maimun bin Abu Syabib] dari [al-Mughirah bin Syu'bah] keduanya berkata," />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

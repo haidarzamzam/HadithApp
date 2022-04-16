@@ -1,69 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.screen.hadithbooks.HadithBooksActivity">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:text="Hadith Books"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_title"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hadith_books"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:listitem="@layout/item_row_hadith_books" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_hadith_books"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:shimmer_auto_start="true">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_normal"
-                android:text="Hadith Books"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_hadith_books"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_normal"
-                app:layout_constraintTop_toBottomOf="@id/tv_title"
-                tools:listitem="@layout/item_row_hadith_books" />
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-            <com.facebook.shimmer.ShimmerFrameLayout
-                android:id="@+id/shimmer_hadith_books"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_normal"
-                app:layout_constraintTop_toBottomOf="@id/tv_title"
-                app:shimmer_auto_start="true">
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
+                <include layout="@layout/item_row_shimmer_hadith_books" />
 
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
+                <include layout="@layout/item_row_shimmer_hadith_books" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
-
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
-
-                    <include layout="@layout/item_row_shimmer_hadith_books" />
-                </LinearLayout>
-            </com.facebook.shimmer.ShimmerFrameLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
