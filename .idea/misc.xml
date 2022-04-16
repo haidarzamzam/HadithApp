@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_shimmer.xml" value="0.1037037037037037" />
+        <entry key="app/src/main/res/layout/activity_hadith_books.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/item_row_hadith_books.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_row_shimmer_hadith_books.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_row_skeleton_hadith_books.xml" value="0.17239583333333333" />
       </map>
     </option>
   </component>

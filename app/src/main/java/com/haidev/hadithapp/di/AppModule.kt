@@ -1,6 +1,7 @@
 package com.haidev.hadithapp.di
 
 import com.haidev.hadithapp.data.source.repository.HadithRepository
+import com.haidev.hadithapp.ui.screen.hadithbooks.HadithBooksViewModel
 import com.haidev.hadithapp.ui.screen.splash.SplashViewModel
 import com.haidev.hadithapp.util.ContextProviders
 import org.koin.android.ext.koin.androidApplication
@@ -9,6 +10,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { SplashViewModel(androidApplication()) }
+    viewModel { HadithBooksViewModel(get(), androidApplication()) }
 }
 
 val apiRepositoryModule = module {

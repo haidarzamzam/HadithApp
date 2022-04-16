@@ -1,9 +1,11 @@
 package com.haidev.hadithapp.ui.screen.splash
 
+import android.content.Intent
 import android.os.Bundle
 import com.haidev.hadithapp.R
 import com.haidev.hadithapp.databinding.ActivitySplashBinding
 import com.haidev.hadithapp.ui.base.BaseActivity
+import com.haidev.hadithapp.ui.screen.hadithbooks.HadithBooksActivity
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
@@ -32,5 +34,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(),
         }
     }
 
-    override fun navigateToListBooks() {}
+    override fun navigateToListBooks() {
+        val intent = Intent(this@SplashActivity, HadithBooksActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
