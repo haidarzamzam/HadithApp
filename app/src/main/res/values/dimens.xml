@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="marginSmall">8dp</dimen>
-    <dimen name="marginNormal">16dp</dimen>
+    <dimen name="margin_very_small">8dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
 </resources>

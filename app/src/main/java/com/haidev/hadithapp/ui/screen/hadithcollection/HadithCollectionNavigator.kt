@@ -1,0 +1,3 @@
+package com.haidev.hadithapp.ui.screen.hadithcollection
+
+interface HadithCollectionNavigator

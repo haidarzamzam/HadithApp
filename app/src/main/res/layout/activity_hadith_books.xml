@@ -15,10 +15,10 @@
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/marginNormal"
+                android:layout_margin="@dimen/margin_normal"
                 android:text="Hadith Books"
                 android:textColor="@color/colorPrimary"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +26,7 @@
                 android:id="@+id/rv_hadith_books"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 tools:listitem="@layout/item_row_hadith_books" />
 
@@ -33,6 +34,7 @@
                 android:id="@+id/shimmer_hadith_books"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 app:shimmer_auto_start="true">
 

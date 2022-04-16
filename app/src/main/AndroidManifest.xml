@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HadithApp">
         <activity
+            android:name=".ui.screen.hadithcollection.HadithCollectionActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.screen.hadithbooks.HadithBooksActivity"
             android:exported="true" />
         <activity

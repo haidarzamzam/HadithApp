@@ -1,13 +1,14 @@
 package com.haidev.hadithapp.ui.screen.hadithbooks
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.haidev.hadithapp.R
 import com.haidev.hadithapp.data.model.HadithBooksModel
 import com.haidev.hadithapp.data.model.Resource
 import com.haidev.hadithapp.databinding.ActivityHadithBooksBinding
 import com.haidev.hadithapp.ui.base.BaseActivity
+import com.haidev.hadithapp.ui.screen.hadithcollection.HadithCollectionActivity
 import com.haidev.hadithapp.util.Status
 import com.haidev.hadithapp.util.gone
 import com.haidev.hadithapp.util.observe
@@ -44,7 +45,6 @@ class HadithBooksActivity : BaseActivity<ActivityHadithBooksBinding, HadithBooks
             }
             adapter = itemHadithBooksAdapter
         }
-
     }
 
     private fun onGetHadithBooks() {
@@ -69,6 +69,8 @@ class HadithBooksActivity : BaseActivity<ActivityHadithBooksBinding, HadithBooks
     }
 
     override fun navigateToHadithCollection(data: HadithBooksModel.Response.Data) {
-        Toast.makeText(this, data.id, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this@HadithBooksActivity, HadithCollectionActivity::class.java)
+        intent.putExtra(HadithCollectionActivity.EXTRA_DATA_HADITH_BOOKS, data)
+        startActivity(intent)
     }
 }
